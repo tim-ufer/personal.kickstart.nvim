@@ -164,6 +164,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Remove _ from keywords so that w and other motions won't skip over it
+vim.opt.iskeyword:remove { '_' }
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
