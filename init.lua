@@ -654,7 +654,7 @@ require('lazy').setup({
             pylsp = {
               plugins = {
                 autopep8 = { enabled = false },
-                yapf = { enabled = false },
+                yapf = { enabled = true },
                 pycodestyle = {
                   ignore = { 'E301', 'E302', 'E226', 'E265', 'E266', 'E261', 'E251', 'E231', 'W293', 'W391', 'W292', 'E501' },
                   maxLineLength = 120,
