@@ -632,7 +632,6 @@ require('lazy').setup({
               runtime = {
                 version = 'LuaJIT',
                 path = { 'lua/?.lua', 'lua/?/init.lua' },
-
               },
               workspace = {
                 checkThirdParty = false,
@@ -659,10 +658,10 @@ require('lazy').setup({
                   ignore = { 'E301', 'E302', 'E226', 'E265', 'E266', 'E261', 'E251', 'E231', 'W293', 'W391', 'W292', 'E501' },
                   maxLineLength = 120,
                 },
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -897,7 +896,7 @@ require('lazy').setup({
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter-intro`
     config = function()
       local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
-      require('nvim-treesitter').install(parsers)
+      require('nvim-treesitter.install').ensure_installed(parsers)
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
           local buf, filetype = args.buf, args.match
